@@ -1,0 +1,17 @@
+# объявление функции
+def print_perm_time_call(msc_time):
+    # Разделяем строку hh:mm на составляющие
+    chasy, minuty = msc_time.split(':')
+    
+    # Преобразуем часы в число и добавляем 2 часа разницы
+    perm_chasy = int(chasy) + 2
+    
+    # Выводим результат, сохраняя формат HH:MM
+    # Используем f-строку с модификатором :02d, чтобы часы всегда были двузначными
+    print(f"Созвон будет в {perm_chasy:02d}:{minuty}.")
+
+# считываем данные
+msc_time = input()
+
+# вызываем функцию
+print_perm_time_call(msc_time)
