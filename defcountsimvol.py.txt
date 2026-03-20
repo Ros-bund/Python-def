@@ -1,0 +1,21 @@
+# объявление функции
+def print_symbol_counts(s):
+    # Приводим всю строку к нижнему регистру
+    stroka_nizkiy = s.lower()
+    
+    # Создаем отсортированный список уникальных символов
+    # set() убирает дубликаты, а sorted() расставляет по алфавиту
+    unikalnye_simvoly = sorted(set(stroka_nizkiy))
+    
+    # Проходим циклом по каждой уникальной букве
+    for simvol in unikalnye_simvoly:
+        # Считаем, сколько раз символ встречается в строке
+        kolichestvo = stroka_nizkiy.count(simvol)
+        # Выводим результат в нужном формате
+        print(f"{simvol}: {kolichestvo}")
+
+# считываем данные
+s = input()
+
+# вызываем функцию
+print_symbol_counts(s)
