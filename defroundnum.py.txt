@@ -1,0 +1,15 @@
+# объявление функции
+def math_round_to_int(num):
+    int_part = int(num)
+    d_part = num - int_part
+    
+    if d_part >= 0.5:
+        return int_part + 1
+    else:
+        return int_part
+
+# считываем данные
+num = float(input())
+
+# вызываем функцию
+print(math_round_to_int(num))
