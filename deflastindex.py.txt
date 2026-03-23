@@ -1,0 +1,20 @@
+# объявление функции
+def get_last_index(data, value):
+    # Проверяем, есть ли вообще такое значение в списке
+    if value not in data:
+        return "ERROR!"
+    
+    # Перебираем индексы от последнего к первому
+    # len(data) - 1 — это индекс последнего элемента
+    # -1 — идем до начала (не включая -1)
+    # -1 — шаг назад
+    for i in range(len(data) - 1, -1, -1):
+        if data[i] == value:
+            return i
+
+# считываем данные
+data = eval(input())
+value = eval(input())
+
+# вызываем функцию
+print(get_last_index(data, value))
