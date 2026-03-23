@@ -1,0 +1,14 @@
+# объявление функции
+def get_unique(numbers):
+    unique_list = []
+    for num in numbers:
+        # Проверяем, нет ли уже такого числа в нашем новом списке
+        if num not in unique_list:
+            unique_list.append(num)
+    return unique_list
+
+# считываем данные
+numbers = eval(input())
+
+# вызываем функцию
+print(get_unique(numbers))
