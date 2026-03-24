@@ -1,0 +1,18 @@
+# объявление функции
+def find_all(target, symbol):
+    indices = []
+    
+    # Перебираем все индексы строки от 0 до конца
+    for i in range(len(target)):
+        # Если символ по текущему индексу совпадает с искомым
+        if target[i] == symbol:
+            indices.append(i)
+            
+    return indices
+
+# считываем данные
+s = input()
+char = input()
+
+# вызываем функцию
+print(find_all(s, char))
