@@ -1,0 +1,31 @@
+def quick_merge(list1, list2):
+    result = []
+    i, j = 0, 0
+    
+    # Сравниваем элементы из обоих списков и добавляем меньший
+    while i < len(list1) and j < len(list2):
+        if list1[i] <= list2[j]:
+            result.append(list1[i])
+            i += 1
+        else:
+            result.append(list2[j])
+            j += 1
+            
+    # Добавляем оставшиеся элементы, если один из списков закончился
+    result.extend(list1[i:])
+    result.extend(list2[j:])
+    
+    return result
+
+# Чтение количества списков
+n = int(input())
+total_list = []
+
+for _ in range(n):
+    # Читаем строку, превращаем в список целых чисел
+    current_list = list(map(int, input().split()))
+    # Последовательно сливаем текущий список с уже накопленным результатом
+    total_list = quick_merge(total_list, current_list)
+
+# Вывод итогового списка через пробел
+print(*total_list)
