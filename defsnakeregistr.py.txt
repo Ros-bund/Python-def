@@ -1,0 +1,15 @@
+# объявление функции
+def convert_to_python_case(text):
+    res = []
+    for i, char in enumerate(text):
+        # Если буква заглавная и это не первый символ — добавляем '_'
+        if char.isupper() and i > 0:
+            res.append('_')
+        res.append(char.lower())
+    return ''.join(res)
+
+# считываем данные
+txt = input()
+
+# вызываем функцию
+print(convert_to_python_case(txt))
