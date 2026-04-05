@@ -1,0 +1,26 @@
+# объявление функции
+def is_password_good(password):
+    if len(password) < 8:
+        return False
+    
+    has_upper = False
+    has_lower = False
+    has_digit = False
+    
+    # Проходим по каждому символу и проверяем его тип
+    for char in password:
+        if char.isupper():
+            has_upper = True
+        if char.islower():
+            has_lower = True
+        if char.isdigit():
+            has_digit = True
+            
+    # Пароль хорош только если выполнены ВСЕ условия
+    return has_upper and has_lower and has_digit
+
+# считываем данные
+txt = input()
+
+# вызываем функцию
+print(is_password_good(txt))
